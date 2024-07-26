@@ -5,11 +5,15 @@ for 4.2.4 or higher, 4.2.5,4.2.6,4.3.7, it's works, this is the way which makes 
 open Terminal, go to the dir : cd /Applications/Beyond Compare.app/Contents/MacOS
 change the name BCompare to BCompare.bak: mv BCompare BCompare.bak
 touch a file name BCompare , and chmod a+ux BCompare : touch  BCompare && chmod a+ux BCompare
+
 open BCompare with text editor, insert the script :
 #!/bin/bash
 rm "/Users/$(whoami)/Library/Application Support/Beyond Compare/registry.dat"
 "`dirname "$0"`"/BCompare.bak $@
+
 restart bc .
+
+
 For Win 4.4.7 unlimited trial.md
 for 4.4.7 or higher, 4.2.5,4.2.6,4.3.7,4.4.7, it's works, this is the way which makes Always in evaluation mode.
 
@@ -21,7 +25,9 @@ Remove-Item "$env:appdata\Scooter Software\Beyond Compare 4\BCState.xml.bak" -Fo
 #Remove-Item "$env:appdata\Scooter Software\Beyond Compare 4\BCSessions.xml" -Force -Confirm:$false
 #Remove-Item "$env:appdata\Scooter Software\Beyond Compare 4\BCSessions.xml.bak" -Force -Confirm:$false
 reg delete "HKCU\Software\Scooter Software\Beyond Compare 4" /v "CacheID" /f
+
 For Win 5.0 unlimited trial.md
+
 #Remove-Item "$env:appdata\Scooter Software\Beyond Compare 5\*.*" -Force -Confirm:$false
 $path = "$env:appdata\Scooter Software\Beyond Compare 5\BCState.xml"
 if (Test-Path $path) {
